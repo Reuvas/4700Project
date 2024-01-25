@@ -63,13 +63,13 @@ InputR(1) = ErN(t, InputParasR);
 
 %OutputR(1) = Ef(Nz);
 %OutputL(1) = Er(1);
-OutputR(i) = Ef(Nz)*(1-RR);
-OutputL(i) = Er(1)*(1-RL);
+OutputR(1) = Ef(Nz)*(1-RR);
+OutputL(1) = Er(1)*(1-RL);
 
 %Ef(1) = InputL(1);
 %Er(Nz) = InputR(1);
-Ef(1) = InputL(i)+RL*Er(1);
-Er(Nz) = InputR(i) + RR*Ef(Nz);
+Ef(1) = InputL(1)+RL*Er(1);
+Er(Nz) = InputR(1) + RR*Ef(Nz);
 
 figure( 'name', 'Fields')
 subplot(3,1,1)
@@ -100,8 +100,8 @@ for i = 2:Nt
     InputR(i) = ErN(t, 0);
 
     %Ef(1) = InputL(i);
-    Ef(1) = InputL(i)+RL*Er(1);
     %Er(Nz) = InputR(i);
+    Ef(1) = InputL(i)+RL*Er(1);
     Er(Nz) = InputR(i) + RR*Ef(Nz);
 
     Ef(2:Nz) = fsync*Ef(1:Nz-1) ;
